@@ -1,6 +1,32 @@
 import pepe.*
 
-test "pepe siendo cadete" {
+test "pepe: cadete, montoFijo, normal, 3" {
 	pepe.cambiarPuesto(cadete)
-	assert.equals(20000, pepe.sueldo())
+	pepe.cambiarResultado(montoFijo)
+	pepe.cambiarPresentismo(normal)
+	pepe.cambiarFaltas(3)
+	assert.equals(20800, pepe.sueldo())
+}
+
+test "pepe: gerente, porcentaje, nulo, noImporta" {
+	pepe.cambiarPuesto(gerente)
+	pepe.cambiarResultado(porcentaje)
+	pepe.cambiarPresentismo(nulo)
+	assert.equals(16500, pepe.sueldo())
+}
+
+test "pepe: cadete, porcentaje, normal, 0" {
+	pepe.cambiarPuesto(cadete)
+	pepe.cambiarResultado(porcentaje)
+	pepe.cambiarPresentismo(normal)
+	pepe.cambiarFaltas(0)
+	assert.equals(24000, pepe.sueldo())
+}
+
+test "pepe: cadete, porcentaje, normal, 1" {
+	pepe.cambiarPuesto(cadete)
+	pepe.cambiarResultado(porcentaje)
+	pepe.cambiarPresentismo(normal)
+	pepe.cambiarFaltas(1)
+	assert.equals(23000, pepe.sueldo())
 }
