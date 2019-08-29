@@ -1,0 +1,6 @@
+import pepe.*
+
+test "pepe siendo cadete" {
+	pepe.cambiarPuesto(cadete)
+	assert.equals(20000, pepe.sueldo())
+}
